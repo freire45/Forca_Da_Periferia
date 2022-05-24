@@ -1,0 +1,179 @@
+body{
+    background-color: #1C1C1C;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.cabecalho img{
+    width: 300px;
+    margin: 20px;
+}
+
+.secaoPrincipal{
+    width: 940px;
+    margin: auto;
+}
+
+.secaoPrincipal h1{
+    color: yellow;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+}
+
+.secaoPrincipal img{
+    width: 550px;
+    margin-left: 190px;
+    margin-top: 5px;
+    border: solid 2px yellow;
+}
+
+.historiaGame{
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.botaoHistoria{
+    color: blue;
+    background-color: yellow;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Press Start 2P', cursive;
+    border-color: darkgoldenrod;
+    border-radius: 50%;
+}
+
+.botaoHistoria:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
+
+.botoes{
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#btnIniciar{
+    color: blue;
+    background-color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    border-color: darkgoldenrod;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#btnIniciar:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
+
+#btnAdicionar{
+    color: blue;
+    background-color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    border-color: darkgoldenrod;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#btnAdicionar:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
+
+.rodape{
+    background-color: yellow;
+    margin-top: 10px;
+    text-align: center;
+    height: 80px;
+    color: blue;
+    padding-top: 45px;
+}
+
+.paragrafoHistoria{
+    background-color: cornflowerblue;
+    margin-top: 10px;
+    text-align: justify;
+    padding: 10px;
+    border-radius: 10px;
+    color: darkblue;
+    line-height: 30px;
+}
+
+#areaTexto{
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1C1C1C;
+    color: yellow;
+    font-size: 15px;
+    line-height: 30px;
+    margin-left: 150px;
+    border-style: none;
+    resize: none;
+    margin-top: 30px;
+}
+
+#areaTexto:focus{
+    box-shadow: none;
+    outline: 0;
+}
+
+#imgInfo{
+    border: none;
+    width: 30px;
+    float: left;
+    margin-right: 20px;
+}
+
+#msgAviso{
+    margin-top: 12px;
+    color: #56b748;
+}
+
+#btnSal{
+    color: blue;
+    background-color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    border-color: darkgoldenrod;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+#btnSal:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
+
+#btnCan{
+    color: blue;
+    background-color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    border-color: darkgoldenrod;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+#btnCan:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
