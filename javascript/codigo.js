@@ -1,4 +1,6 @@
 var girias = ["TRUTA", "MANO", "MINA", "PARÇA", "BALADA", "VÉI", "BUGADO", "BO","COTA", "MANDRAKE"];
+var pSorteada;
+var pSecreta;
 
 var btnHistoria = document.querySelector("#botaoHistoria");
 var btnAdPalavra = document.querySelector(".botaoAdicionar");
@@ -21,11 +23,33 @@ btnCancelar.id = "btnCan";
 btnCancelar.setAttribute("type", "button");
 btnCancelar.innerHTML = "Cancelar";
 
+var btnNovoJogo = document.createElement("button");
+btnNovoJogo.id = "btnNovoJogo";
+btnNovoJogo.setAttribute("type", "button");
+btnNovoJogo.innerHTML = "Novo Jogo";
+
+var btnDesisitir = document.createElement("button");
+btnDesisitir.id = "btnDesistir";
+btnDesisitir.setAttribute("type", "button");
+btnDesisitir.innerHTML = "Desistir";
+
 var scPrincipal = document.querySelector(".secaoPrincipal");
 var txtAre= document.createElement("textarea");
 var tPrincipal = document.createElement("h1");   
 var pAviso = document.createElement("p"); 
 var imgAviso = document.createElement("img");
+var adCanvas = document.createElement("canvas");
+var adLetraDigitada = document.createElement("input");
+var palavraSorteada =  document.createElement("input");
+
+adCanvas.id = "canvasGame";
+adLetraDigitada.id = "letrasDigitadas";
+palavraSorteada.id = "palavraSorteada";
+
+adLetraDigitada.setAttribute("type","text");
+adLetraDigitada.setAttribute("disabled","");
+palavraSorteada.setAttribute("type","text");
+palavraSorteada.setAttribute("disabled","");
      
     
 tPrincipal.innerHTML = "Adicione Uma Palavra";
@@ -38,7 +62,6 @@ imgAviso.id = "imgInfo";
 txtAre.id = "areaTexto";
 pAviso.innerHTML = "Max. 8 Letras";
 pAviso.id = "msgAviso";
-
 
 var resposta = false;
 
@@ -122,7 +145,33 @@ btnSalvar.addEventListener("click", function(){
 });
 
 btnInicioGame.addEventListener("click", function(){
-    alert("Clicado");
+    document.getElementById("tituloPrincipal").remove();
+    document.getElementById("imgHistoria").remove();
+    document.getElementById("btnIniciar").remove();
+    document.getElementById("btnAdicionar").remove();
+    document.getElementById("botaoHistoria").remove();
+
+    scPrincipal.appendChild(adCanvas);
+    scPrincipal.appendChild(adLetraDigitada);
+    scPrincipal.appendChild(palavraSorteada);
+    scBotoes.appendChild(btnNovoJogo);
+    scBotoes.appendChild(btnDesisitir);
+
+    sorteiaPalavra();
+    preencheSegredo();
+    
 
 });
+
+function sorteiaPalavra(){
+    var max = girias.length;
+    var posPalavra = Math.floor(Math.random() * max);
+    pSorteada = girias[posPalavra];    
+};
+
+function preencheSegredo(){
+    for(var i = 0; i < pSorteada.length; i++){
+        palavraSorteada.value = palavraSorteada.value + "_";
+    }
+}
 

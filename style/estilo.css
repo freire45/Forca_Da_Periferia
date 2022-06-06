@@ -177,3 +177,79 @@ body{
     background-color:blue;
     border-color: cadetblue;
 }
+
+#canvasGame{
+    width: 800px;
+    margin-left: 100px;
+    border: 2px solid white;
+}
+
+#letrasDigitadas{
+    margin-left: 100px;
+    width: 800px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1C1C1C;
+    color: yellow;
+    font-size: 15px;
+    line-height: 30px;
+    border-style: none;
+    margin-top: 30px;
+}
+
+#letrasDigitadas:focus{
+    box-shadow: none;
+    outline: 0;
+}
+
+#palavraSorteada{
+    margin-left: 100px;
+    width: 800px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1C1C1C;
+    color: yellow;
+    font-size: 15px;
+    line-height: 30px;
+    border-style: none;
+    margin-top: 30px;
+}
+
+#palavraSorteada{
+    box-shadow: none;
+    outline: 0;
+}
+
+#btnNovoJogo{
+    color: blue;
+    background-color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    border-color: darkgoldenrod;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+#btnNovoJogo:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
+
+#btnDesistir{
+    color: blue;
+    background-color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    border-color: darkgoldenrod;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+#btnDesistir:hover{
+    color:yellow;
+    background-color:blue;
+    border-color: cadetblue;
+}
