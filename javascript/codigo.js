@@ -1,6 +1,13 @@
-var girias = ["TRUTA", "MANO", "MINA", "PARÇA", "BALADA", "VÉI", "BUGADO", "BO","COTA", "MANDRAKE"];
+var girias = ["TRUTA", "MANO", "MINA", "PARÇA", "BALADA", "VEI", "BUGADO", "BO","COTA", "MANDRAKE"];
 var pSorteada;
 var pSecreta;
+var pSecreta2 = [];
+var letraDigitada = [];
+var letra;
+
+var palvr;
+
+var corpo = document.querySelector("#corpo");
 
 var btnHistoria = document.querySelector("#botaoHistoria");
 var btnAdPalavra = document.querySelector(".botaoAdicionar");
@@ -149,7 +156,7 @@ btnInicioGame.addEventListener("click", function(){
     document.getElementById("imgHistoria").remove();
     document.getElementById("btnIniciar").remove();
     document.getElementById("btnAdicionar").remove();
-    document.getElementById("botaoHistoria").remove();
+    document.getElementById("botaoHistoria").remove();        
 
     scPrincipal.appendChild(adCanvas);
     scPrincipal.appendChild(adLetraDigitada);
@@ -160,8 +167,18 @@ btnInicioGame.addEventListener("click", function(){
     sorteiaPalavra();
     preencheSegredo();
     
+    pegaLetra();
 
 });
+
+function pegaLetra(){
+    corpo.addEventListener("keydown", (e) =>{
+        letra = e.key;
+        letraDigitada.push(letra.toUpperCase());
+        adLetraDigitada.value = letraDigitada.toString().replace(/\,/g, " ");
+        verificaAcerto(letra.toUpperCase());
+   });    
+};
 
 function sorteiaPalavra(){
     var max = girias.length;
@@ -169,9 +186,76 @@ function sorteiaPalavra(){
     pSorteada = girias[posPalavra];    
 };
 
-function preencheSegredo(){
+function preencheSegredo(){    
     for(var i = 0; i < pSorteada.length; i++){
-        palavraSorteada.value = palavraSorteada.value + "_";
+        pSecreta2.push("_");
     }
+    palavraSorteada.value = pSecreta2.toString().replace(/\,/g, "");
 }
+
+function verificaAcerto(letra){
+
+    palvr = Array.from(pSorteada.toUpperCase());
+
+    for(var z = 0; z < pSorteada.length; z++){
+        if(palvr[z] === letra){
+            pSecreta2[z] = letra;            
+        }
+    }
+    palavraSorteada.value = pSecreta2.toString().replace(/\,/g, "");
+    
+}
+
+
+
+btnNovoJogo.addEventListener("click", function(){
+
+    document.getElementById("canvasGame").remove();
+    document.getElementById("letrasDigitadas").remove();
+    document.getElementById("palavraSorteada").remove();
+    document.getElementById("btnNovoJogo").remove();
+    document.getElementById("btnDesistir").remove();
+    pSecreta2.splice(0, pSecreta2.length);
+
+    scPrincipal.appendChild(adCanvas);
+    scPrincipal.appendChild(adLetraDigitada);
+    scPrincipal.appendChild(palavraSorteada);
+    scBotoes.appendChild(btnNovoJogo);
+    scBotoes.appendChild(btnDesisitir);
+
+    sorteiaPalavra();
+    preencheSegredo();    
+    pegaLetra();
+
+});
+
+btnDesisitir.addEventListener("click", function(){
+    document.getElementById("canvasGame").remove();
+    document.getElementById("letrasDigitadas").remove();
+    document.getElementById("palavraSorteada").remove();
+    document.getElementById("btnNovoJogo").remove();
+    document.getElementById("btnDesistir").remove();
+    pSecreta2.splice(0, pSecreta2.length);
+
+    tituloPrincipalIn.innerHTML = "Forca Da Periferia";
+    imgPrincipal.setAttribute("src","img/historiaCidade.gif");
+
+    btnHistoria.id = "botaoHistoria";
+    btnHistoria.classList.add("botaoHistoria");
+    
+    btnInicioGame.id = "btnIniciar";
+    btnInicioGame.classList.add("botaoIniciar");
+
+    btnAdPalavra.id = "btnAdicionar";
+    btnAdPalavra.classList.add("botaoAdicionar");
+
+    scPrincipal.appendChild(tituloPrincipalIn);
+    scPrincipal.appendChild(imgPrincipal);
+
+    scBotoes.appendChild(btnInicioGame);
+    scBotoes.appendChild(btnAdPalavra);
+
+    scHistoria.appendChild(btnHistoria);
+
+});
 
